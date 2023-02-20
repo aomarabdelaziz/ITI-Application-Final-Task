@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: final-project
+  name: final-project
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: final-project
+  template:
+    metadata:
+      labels:
+        app: final-project
+    spec:
+      containers:
+        - image: gcr.io/abdelaziz-gke/iti_graduation_project
+          name: final-project
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources: {}
